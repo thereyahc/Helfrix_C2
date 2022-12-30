@@ -8,7 +8,7 @@ use std::{error::Error, result::Result};
 
 #[async_std::main]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
-    task::block_on(try_run("192.168.158.146:6666"))
+    task::block_on(try_run("ip:6666"))
 }
 async fn try_run(addr: impl ToSocketAddrs) -> Result<(), Box<dyn Error + Send + Sync>> {
     let mut stream = TcpStream::connect(addr).await?;
